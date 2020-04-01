@@ -3,7 +3,7 @@ import pyaudio
 import struct
 import math
 import numpy as np
-from scipy import signal
+#from scipy import signal
 import matplotlib.pyplot as plt
 import threading
 import time
@@ -56,10 +56,10 @@ class AudioHandler(object):
     def processBlock(self, audio):
         print ("Processing started")
         start = time.time()
-        f, t, Sxx = signal.spectrogram(audio, RATE)
+        #f, t, Sxx = signal.spectrogram(audio, RATE)
 
         audio = audio / 1.0
-        #ps=librosa.feature.melspectrogram(audio,RATE)
+        ps=librosa.feature.melspectrogram(audio,RATE)
 
         end = time.time()
         print("Processing finished")
