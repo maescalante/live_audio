@@ -10,7 +10,7 @@ import librosa
 
 
 RATE = 16000
-INPUT_BLOCK_TIME = 0.032 # 30 ms
+INPUT_BLOCK_TIME = 0.032 # 32 ms
 INPUT_FRAMES_PER_BLOCK = int(RATE * INPUT_BLOCK_TIME)
 
 def get_rms(block):
@@ -79,7 +79,8 @@ class AudioHandler(object):
             return
 
         #amplitude = get_rms(audio)
-        x = threading.Thread(target=self.processBlock, args=(audio,))
+        toProcess=audio
+        x = threading.Thread(target=self.processBlock, args=(toProcess,))
         x.start()
 
 
