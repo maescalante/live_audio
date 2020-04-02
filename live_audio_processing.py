@@ -10,7 +10,7 @@ import time
 import librosa
 
 
-RATE = 16500
+RATE = 5500
 INPUT_BLOCK_TIME = 0.032 # 32 ms
 INPUT_FRAMES_PER_BLOCK = int(RATE * INPUT_BLOCK_TIME)
 
