@@ -88,6 +88,15 @@ class AudioHandler(object):
 
 if __name__ == '__main__':
     audio = AudioHandler()
-    while (True):
+    run=True
+    while (run):
         print(threading.active_count())
         audio.listen()
+        if threading.active_count()>10:
+            run=False
+
+    while threading.active_count()>0:
+        print('Cerrando Threads')
+        time.sleep(0.5)
+
+    print('Se han cerrado todos los threads')
