@@ -10,7 +10,7 @@ import time
 import librosa
 
 
-RATE = 44100
+RATE = 22000
 INPUT_BLOCK_TIME = 0.032 # 32 ms
 INPUT_FRAMES_PER_BLOCK = int(RATE * INPUT_BLOCK_TIME)
 
@@ -95,7 +95,7 @@ if __name__ == '__main__':
         if threading.active_count()>10:
             run=False
 
-    while threading.active_count()>0:
+    while threading.active_count()>1:
         print('Cerrando Threads')
         time.sleep(0.5)
 
