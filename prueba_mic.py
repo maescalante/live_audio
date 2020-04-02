@@ -1,6 +1,6 @@
+#!/usr/bin/env python3
 import pyaudio
-from numpy import zeros,linspace,short,fromstring,hstack,transpose,log
-from scipy import fft
+from numpy import short,fromstring
 from time import sleep
 
 def find_input_device():
